@@ -28,4 +28,14 @@ module.exports = function (app) {
                 res.json(err)
             });
     });
+
+    app.get("/api/workouts/range", (req, res) => {
+        db.Workout.find({})
+        .then(workout => {
+            res.json(workout);
+        })
+        .catch(error => {
+            res.json(error);
+        });
+    }); 
 };
